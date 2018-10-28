@@ -47,25 +47,6 @@ class App extends Component {
 										temperature={weather.temp}
 										wind={weather.wind}
 									/>
-									/*
-									<div>
-										<div>
-											<span>
-												{weather.city},{' '}
-												{weather.country}
-											</span>
-										</div>
-										<div>{weather.currently}</div>
-										<div>
-											<i
-												className={
-													'wi wi-yahoo-' +
-													weather.code
-												}
-											/>
-										</div>
-									</div>
-									*/
 								);
 							}
 							return <div>Loading</div>;
