@@ -1,28 +1,82 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SimpleWeather from './components/SimpleWeather';
+import WeatherCard from './example/WeatherCard';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	state = {};
+
+	componentDidMount() {
+		navigator.geolocation.getCurrentPosition(location => {
+			/*
+			console.log(
+				'COORDS',
+				location.coords.latitude + ',' + location.coords.longitude
+			);
+			*/
+			this.setState({
+				location:
+				'45.6481607,12.340719'
+					//location.coords.latitude + ',' + location.coords.longitude
+			});
+		});
+	}
+
+	render() {
+		return (
+			<div
+				className="App"
+				style={{ display: 'flex', justifyContent: 'center' }}
+			>
+				{this.state.location ? (
+					<SimpleWeather location={this.state.location} unit="c">
+						{(weather, errorMessage) => {
+							if (errorMessage) {
+								return <div>{errorMessage}</div>;
+							}
+							if (weather) {
+								return (
+									<WeatherCard
+										location={{
+											city: weather.city,
+											region: weather.region,
+											country: weather.country
+										}}
+										weatherDescription={weather.currently}
+										weatherCode={weather.code}
+										temperature={weather.temp}
+										wind={weather.wind}
+									/>
+									/*
+									<div>
+										<div>
+											<span>
+												{weather.city},{' '}
+												{weather.country}
+											</span>
+										</div>
+										<div>{weather.currently}</div>
+										<div>
+											<i
+												className={
+													'wi wi-yahoo-' +
+													weather.code
+												}
+											/>
+										</div>
+									</div>
+									*/
+								);
+							}
+							return <div>Loading</div>;
+						}}
+					</SimpleWeather>
+				) : (
+					<div>Loading</div>
+				)}
+			</div>
+		);
+	}
 }
 
 export default App;
