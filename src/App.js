@@ -8,16 +8,14 @@ class App extends Component {
 
 	componentDidMount() {
 		navigator.geolocation.getCurrentPosition(location => {
-			/*
 			console.log(
 				'COORDS',
 				location.coords.latitude + ',' + location.coords.longitude
 			);
-			*/
 			this.setState({
 				location:
-				'45.6481607,12.340719'
-					//location.coords.latitude + ',' + location.coords.longitude
+					//'45.6481607,12.340719'
+					location.coords.latitude + ',' + location.coords.longitude
 			});
 		});
 	}
