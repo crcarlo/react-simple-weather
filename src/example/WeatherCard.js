@@ -44,11 +44,15 @@ export default ({
 						fontSize: 40,
 						display: 'flex',
 						flexDirection: 'column',
-						justifyContent: 'center'
+						justifyContent: 'center',
+						paddingBottom: 10
 					}}
 					className={'wi wi-yahoo-' + weatherCode}
 				/>
-				<span>{weatherDescription}</span>
+				<span
+				>
+					{weatherDescription}
+				</span>
 			</div>
 		</div>
 		<div style={{ paddingTop: 40 }}>
