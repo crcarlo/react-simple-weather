@@ -8,8 +8,9 @@ Here's an exemple usage
 import { SimpleWeather } from 'react-simple-weather';
 
 <SimpleWeather location={this.state.location} unit="c">
-	{(weather, errorMessage) => 
-		errorMessage || <MyComponent weather={weather}>
+	{
+		(weather, errorMessage) => 
+			errorMessage || <MyComponent weather={weather} />
 	}
 </SimpleWeather>
 ```
