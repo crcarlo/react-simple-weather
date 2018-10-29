@@ -7,7 +7,7 @@ Here's an exemple usage
 ```jsx
 import { SimpleWeather } from 'react-simple-weather';
 
-<SimpleWeather location={this.state.location} unit="c">
+<SimpleWeather location="45.6481607,12.340719" unit="c">
   {
     (weather, errorMessage) => 
       errorMessage || <MyComponent weather={weather} />
