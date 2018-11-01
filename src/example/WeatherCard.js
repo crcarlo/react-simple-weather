@@ -9,14 +9,7 @@ export default ({
 	wind
 }) => (
 	<div
-		style={{
-			width: 380,
-			color: 'lightgray',
-			backgroundColor: '#333',
-			fontFamily: 'Roboto',
-			borderRadius: 20,
-			padding: 30
-		}}
+		className="weather-card"
 	>
 		<div
 			style={{
@@ -49,13 +42,17 @@ export default ({
 					}}
 					className={'wi wi-yahoo-' + weatherCode}
 				/>
-				<span
-				>
-					{weatherDescription}
-				</span>
+				<span>{weatherDescription}</span>
 			</div>
 		</div>
-		<div style={{ paddingTop: 40 }}>
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'column ',
+				paddingTop: 40,
+				alignItems: 'center'
+			}}
+		>
 			<WeatherCardRow
 				icon={
 					<i

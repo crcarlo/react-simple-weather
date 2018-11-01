@@ -5,8 +5,7 @@ export default ({ icon, children, ...restProps }) => (
 		style={{
 			display: 'flex',
 			justifyContent: 'space-between',
-			paddingLeft: 80,
-			paddingRight: 80,
+			width: 260,
 			paddingBottom: 20
 		}}
 		{...restProps}
