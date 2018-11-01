@@ -24,3 +24,6 @@ You can see what the returned `weather` object contains in the [simpleWeather do
 |`location` | the `latitude,longitude` string for the desired position|
 |or `woeid`| the [woeid](https://en.wikipedia.org/wiki/WOEID) of the location
 |`unit`|unit used for temperature (`'c'` or `'f'`)| 
+
+## Running demo
+You can find a demo on this repository which is running at [crcarlo.github.io/react-simple-weather](https://crcarlo.github.io/react-simple-weather)
