@@ -224,9 +224,6 @@ export default class SimpleWeather extends Component {
 		const { location, unit, children, ...restProps } = this.props;
 		const { weather, errorMessage } = this.state;
 
-		console.log('WEATHER', weather);
-		console.log('ERROR MSG', errorMessage);
-
 		return <div {...restProps}>{children(weather, errorMessage)}</div>;
 	}
 }
