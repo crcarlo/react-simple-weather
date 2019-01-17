@@ -2,6 +2,12 @@
 
 A React implementation of [simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather) jQuery plugin.
 
+> ⚠⚠⚠ WARNING ⚠⚠⚠
+>
+> As mentioned in [this article](https://developer.yahoo.com/weather/?guccounter=1) starting from **Jan 3, 2019** yahoo will require an API key for using their APIs.
+> 
+> For this reason this plugin will not work until future updates.
+
 Here's an exemple usage
 
 ```jsx
