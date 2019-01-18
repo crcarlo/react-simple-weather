@@ -58,8 +58,6 @@ export default class SimpleWeather extends Component {
 			return false;
 		}
 
-		console.log('RETRIVING DATA FROM ', weatherUrl);
-		console.log('RETRIVING DATA FROM ', encodeURI(weatherUrl));
 		getJSON(encodeURI(weatherUrl)).then(data => {
 			console.log('DATA', data);
 			if (
