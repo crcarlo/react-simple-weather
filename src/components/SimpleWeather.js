@@ -59,7 +59,6 @@ export default class SimpleWeather extends Component {
 		}
 
 		getJSON(encodeURI(weatherUrl)).then(data => {
-			console.log('DATA', data);
 			if (
 				data !== null &&
 				data.query !== null &&
