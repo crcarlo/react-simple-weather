@@ -18,6 +18,28 @@ export default class SimpleWeather extends Component {
     this.setState({ weather: responseBodyJson });
   }
 
+  async getWeatherFromLocation(location) {
+    const { apiBaseUrl, unit } = this.props;
+    const response = await fetch(
+      `${apiBaseUrl}forecastrss?location=${location}&format=json` +
+        (unit && `&u=${unit}`)
+    );
+    const responseBody = await response.json();
+    const responseBodyJson = JSON.parse(responseBody);
+    this.setState({ weather: responseBodyJson });
+  }
+
+  async getWeatherFromWoeid(woeid) {
+    const { apiBaseUrl, unit } = this.props;
+    const response = await fetch(
+      `${apiBaseUrl}forecastrss?woeid=${woeid}&format=json` +
+        (unit && `&u=${unit}`)
+    );
+    const responseBody = await response.json();
+    const responseBodyJson = JSON.parse(responseBody);
+    this.setState({ weather: responseBodyJson });
+  }
+
   componentDidMount() {
     const {
       apiBaseUrl,
@@ -30,6 +52,10 @@ export default class SimpleWeather extends Component {
 
     if (latitude != null && longitude != null) {
       this.getWeatherFromLatitudeLongitude(latitude, longitude);
+    } else if (location) {
+      this.getWeatherFromLocation(location);
+    } else if (woeid) {
+      this.getWeatherFromWoeid(woeid);
     }
   }
 
