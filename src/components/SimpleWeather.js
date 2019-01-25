@@ -8,9 +8,10 @@ export default class SimpleWeather extends Component {
   };
 
   async getWeatherFromLatitudeLongitude(latitude, longitude) {
-    const { apiBaseUrl } = this.props;
+    const { apiBaseUrl, unit } = this.props;
     const response = await fetch(
-      apiBaseUrl + `forecastrss?lat=${latitude}&lon=${longitude}&format=json`
+      `${apiBaseUrl}forecastrss?lat=${latitude}&lon=${longitude}&format=json` +
+        (unit && `&u=${unit}`)
     );
     const responseBody = await response.json();
     const responseBodyJson = JSON.parse(responseBody);
