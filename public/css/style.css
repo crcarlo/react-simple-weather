@@ -1,21 +1,21 @@
 body {
-	font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 h1 {
-	text-align: center;
+  text-align: center;
 }
 
 .weather-card {
-	color: lightgray;
-	background-color: #333;
-	font-family: 'Roboto';
-	border-radius: 20px;
-	padding: 30px;
+  color: lightgray;
+  background-color: #333;
+  font-family: "Roboto";
+  border-radius: 20px;
+  padding: 30px;
 }
 
 @media (min-width: 768px) {
-	.weather-card {
-		width: 360px;
-	}
+  .weather-card {
+    width: 360px;
+  }
 }
