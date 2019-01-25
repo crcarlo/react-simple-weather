@@ -40,9 +40,9 @@ export default class SimpleWeather extends Component {
 	}
 
 	render() {
-		const { unit, children, apiBaseUrl, ...restProps } = this.props;
+		const { unit, children, apiBaseUrl } = this.props;
 		const { weather, errorMessage } = this.state;
 
-		return <div {...restProps}>{children(weather, errorMessage)}</div>;
+		return <>{children(weather, errorMessage)}</>;
 	}
 }
