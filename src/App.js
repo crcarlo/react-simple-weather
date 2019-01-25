@@ -13,37 +13,56 @@ class App extends Component {
 				location.coords.latitude + ',' + location.coords.longitude
 			);
 			this.setState({
-				location:
-					//'45.6481607,12.340719'
-					location.coords.latitude + ',' + location.coords.longitude
+				//'45.6481607,12.340719'
+				latitude: location.coords.latitude,
+				longitude: location.coords.longitude
 			});
 		});
 	}
 
 	render() {
+		const { latitude, longitude } = this.state;
+
 		return (
 			<div
 				className="App"
 				style={{ display: 'flex', justifyContent: 'center' }}
 			>
-				{this.state.location ? (
-					<SimpleWeather location={this.state.location} unit="c">
+				{this.state.latitude && this.state.longitude ? (
+					<SimpleWeather
+						apiBaseUrl="https://yahoo-weather-api-proxy.now.sh/"
+						latitude={latitude}
+						longitude={longitude}
+						unit="c"
+					>
 						{(weather, errorMessage) => {
+
 							if (errorMessage) {
 								return <div>{errorMessage}</div>;
 							}
 							if (weather) {
+								console.log("WEATHER", weather);
+								console.log("LOCATION", weather.location);
 								return (
 									<WeatherCard
 										location={{
-											city: weather.city,
-											region: weather.region,
-											country: weather.country
+											city: weather.location.city,
+											region: weather.location.region,
+											country: weather.location.country
 										}}
-										weatherDescription={weather.currently}
-										weatherCode={weather.code}
-										temperature={weather.temp}
-										wind={weather.wind}
+										weatherDescription={
+											weather.current_observation
+												.condition.text
+										}
+										weatherCode={
+											weather.current_observation
+												.condition.code
+										}
+										temperature={
+											weather.current_observation
+												.condition.temperature
+										}
+										wind={weather.current_observation.wind}
 									/>
 								);
 							}

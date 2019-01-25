@@ -1,6 +1,26 @@
 import React from 'react';
 import WeatherCardRow from './WeatherCardRow';
 
+const compass = [
+	'n',
+	'nne',
+	'ne',
+	'ene',
+	'e',
+	'ese',
+	'se',
+	'sse',
+	's',
+	'ssw',
+	'sw',
+	'wsw',
+	'w',
+	'wnw',
+	'nw',
+	'nnw',
+	'n'
+];
+
 export default ({
 	location,
 	weatherDescription,
@@ -8,9 +28,7 @@ export default ({
 	temperature,
 	wind
 }) => (
-	<div
-		className="weather-card"
-	>
+	<div className="weather-card">
 		<div
 			style={{
 				display: 'flex',
@@ -90,7 +108,8 @@ export default ({
 							fontSize: 30
 						}}
 						className={
-							'wi wi-wind wi-from-' + wind.direction.toLowerCase()
+							'wi wi-wind wi-from-' +
+							compass[Math.round(wind.direction / 22.5)]
 						}
 					/>
 					<span style={{ marginLeft: 5 }}>
