@@ -1,48 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class SimpleWeather extends Component {
-	state = {};
+  state = {};
 
-	static defaultProps = {
-		unit: 'c'
-	};
+  static defaultProps = {
+    unit: "c"
+  };
 
-	async getWeatherFromLatitudeLongitude(latitude, longitude) {
-		const { apiBaseUrl } = this.props;
+  async getWeatherFromLatitudeLongitude(latitude, longitude) {
+    const { apiBaseUrl } = this.props;
 
-		const response = await fetch(
-			apiBaseUrl +
-				`forecastrss?lat=${latitude}&lon=${longitude}&format=json`
-		);
+    const response = await fetch(
+      apiBaseUrl + `forecastrss?lat=${latitude}&lon=${longitude}&format=json`
+    );
 
-		const responseBody = await response.json();
+    const responseBody = await response.json();
 
-		const responseBodyJson = JSON.parse(responseBody);
+    const responseBodyJson = JSON.parse(responseBody);
 
-		console.log('RESPONSE', responseBody);
+    console.log("RESPONSE", responseBody);
 
-		this.setState({ weather: responseBodyJson });
-	}
+    this.setState({ weather: responseBodyJson });
+  }
 
-	componentDidMount() {
-		const {
-			apiBaseUrl,
-			latitude,
-			longitude,
-			location,
-			woeid,
-			unit
-		} = this.props;
+  componentDidMount() {
+    const {
+      apiBaseUrl,
+      latitude,
+      longitude,
+      location,
+      woeid,
+      unit
+    } = this.props;
 
-		if (latitude != null && longitude != null) {
-			this.getWeatherFromLatitudeLongitude(latitude, longitude);
-		}
-	}
+    if (latitude != null && longitude != null) {
+      this.getWeatherFromLatitudeLongitude(latitude, longitude);
+    }
+  }
 
-	render() {
-		const { unit, children, apiBaseUrl } = this.props;
-		const { weather, errorMessage } = this.state;
+  render() {
+    const { unit, children, apiBaseUrl } = this.props;
+    const { weather, errorMessage } = this.state;
 
-		return <>{children(weather, errorMessage)}</>;
-	}
+    return <>{children(weather, errorMessage)}</>;
+  }
 }

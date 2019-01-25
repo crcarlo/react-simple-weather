@@ -1,3 +1,3 @@
-import SimpleWeather from './src/components/SimpleWeather';
+import SimpleWeather from "./src/components/SimpleWeather";
 
 export default { SimpleWeather };
