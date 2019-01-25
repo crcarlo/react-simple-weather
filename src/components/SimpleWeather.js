@@ -14,7 +14,6 @@ export default class SimpleWeather extends Component {
     );
     const responseBody = await response.json();
     const responseBodyJson = JSON.parse(responseBody);
-    console.log("RESPONSE", responseBody);
     this.setState({ weather: responseBodyJson });
   }
 
