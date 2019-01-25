@@ -41,14 +41,7 @@ export default class SimpleWeather extends Component {
   }
 
   componentDidMount() {
-    const {
-      apiBaseUrl,
-      latitude,
-      longitude,
-      location,
-      woeid,
-      unit
-    } = this.props;
+    const { latitude, longitude, location, woeid } = this.props;
 
     if (latitude != null && longitude != null) {
       this.getWeatherFromLatitudeLongitude(latitude, longitude);
@@ -60,7 +53,7 @@ export default class SimpleWeather extends Component {
   }
 
   render() {
-    const { unit, children, apiBaseUrl } = this.props;
+    const { children } = this.props;
     const { weather, errorMessage } = this.state;
 
     return <>{children(weather, errorMessage)}</>;
