@@ -1,13 +1,13 @@
 {
-  "main.css": "/react-simple-weather/static/css/main.658e777a.chunk.css",
-  "main.js": "/react-simple-weather/static/js/main.0b901449.chunk.js",
-  "main.js.map": "/react-simple-weather/static/js/main.0b901449.chunk.js.map",
-  "static/js/1.e1ac019b.chunk.js": "/react-simple-weather/static/js/1.e1ac019b.chunk.js",
-  "static/js/1.e1ac019b.chunk.js.map": "/react-simple-weather/static/js/1.e1ac019b.chunk.js.map",
+  "main.css": "/react-simple-weather/static/css/main.c3359c4d.chunk.css",
+  "main.js": "/react-simple-weather/static/js/main.2eda882f.chunk.js",
+  "main.js.map": "/react-simple-weather/static/js/main.2eda882f.chunk.js.map",
+  "static/js/1.463a16d4.chunk.js": "/react-simple-weather/static/js/1.463a16d4.chunk.js",
+  "static/js/1.463a16d4.chunk.js.map": "/react-simple-weather/static/js/1.463a16d4.chunk.js.map",
   "runtime~main.js": "/react-simple-weather/static/js/runtime~main.5bc16563.js",
   "runtime~main.js.map": "/react-simple-weather/static/js/runtime~main.5bc16563.js.map",
-  "static/css/main.658e777a.chunk.css.map": "/react-simple-weather/static/css/main.658e777a.chunk.css.map",
+  "static/css/main.c3359c4d.chunk.css.map": "/react-simple-weather/static/css/main.c3359c4d.chunk.css.map",
   "index.html": "/react-simple-weather/index.html",
-  "precache-manifest.41ec6775c17d52f9ba7aaa32aceb3941.js": "/react-simple-weather/precache-manifest.41ec6775c17d52f9ba7aaa32aceb3941.js",
+  "precache-manifest.2a19802c9a75482a1d578cf8f8096786.js": "/react-simple-weather/precache-manifest.2a19802c9a75482a1d578cf8f8096786.js",
   "service-worker.js": "/react-simple-weather/service-worker.js"
 }
