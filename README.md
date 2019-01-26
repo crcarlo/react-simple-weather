@@ -1,19 +1,13 @@
 # React Simple Weather
 
-A React implementation of [simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather) jQuery plugin.
+⚛🌦React enhancer for retriving Yahoo Weather API data
 
-> ⚠⚠⚠ WARNING ⚠⚠⚠
->
-> As mentioned in [this article](https://developer.yahoo.com/weather/?guccounter=1) starting from **Jan 3, 2019** yahoo will require an API key for using their APIs.
-> 
-> For this reason this plugin will not work until future updates.
-
-Here's an exemple usage
+## Usage
 
 ```jsx
 import { SimpleWeather } from 'react-simple-weather';
 
-<SimpleWeather location="45.6481607,12.340719" unit="c">
+<SimpleWeather latitude="45.6481607" longitude="12.340719" unit="c">
   {
     (weather, errorMessage) => 
       errorMessage || <MyComponent weather={weather} />
@@ -21,14 +15,15 @@ import { SimpleWeather } from 'react-simple-weather';
 </SimpleWeather>
 ```
 
-You can see what the returned `weather` object contains in the [simpleWeather documentation](https://monkeecreate.github.io/jquery.simpleWeather/).
+You can see what the returned `weather` object contains in the [Yahoo Weather API documentation](https://developer.yahoo.com/weather/documentation.html).
 
 ## Required props
 
 |prop|description|
 |---|----|
-|`location` | the `latitude,longitude` string for the desired position|
-|or `woeid`| the [woeid](https://en.wikipedia.org/wiki/WOEID) of the location
+|`latitude` and `longitude`| the `latitude` and `longitude` for the desired position|
+|`location`| the city name of the location
+|`woeid`| the [woeid](https://en.wikipedia.org/wiki/WOEID) of the location
 |`unit`|unit used for temperature (`'c'` or `'f'`)| 
 
 ## Running demo
